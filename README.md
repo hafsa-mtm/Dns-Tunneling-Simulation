@@ -12,9 +12,9 @@ This project simulates a DNS Tunneling attack using:
 - `/setup`:
  ### A virtual lab was created using VMware with two machines:
   #### Attacker (Kali Linux 2023.1):
-  Hosts dnscat2 (C2 server) and dnschef (fake DNS server).
+  -Hosts dnscat2 (C2 server) and dnschef (fake DNS server).
   #### Victim (Ubuntu 20.04):
-  Simulates a compromised system communicating via DNS tunneling.
+  -Simulates a compromised system communicating via DNS tunneling.
 - `/dnschef`: Configuration for fake DNS domain
 ###The attacker machine (Kali Linux) uses dnschef, a rogue DNS proxy, to intercept DNS queries from the victim.
   Purpose: Redirect DNS queries for a fake domain (e.g., *.tunnel.local) to the attacker's IP, enabling covert C2 communication.
