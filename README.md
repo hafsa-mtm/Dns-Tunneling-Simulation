@@ -49,7 +49,8 @@ A custom Bash script (`malware.sh`) was developed to simulate real-world malware
   To complete the DNS tunneling setup, the attacker's environment includes running both the **dnscat2 C2 server** and the **dnschef fake DNS server** in parallel.
  ### ⚙️ dnscat2 Installation & Setup
  -Installs Ruby
-    ![image](https://github.com/user-attachments/assets/412d31fa-7da7-4a84-b466-45ad59f421d7)
+ 
+   ![image](https://github.com/user-attachments/assets/412d31fa-7da7-4a84-b466-45ad59f421d7)
     
  -Clones the dnscat2 repository from GitHub to your local machine.
     
