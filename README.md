@@ -22,7 +22,9 @@ This project simulates a DNS Tunneling attack using:
   ![image](https://github.com/user-attachments/assets/0b114df3-97b7-4f8c-bc33-74e2ead71348)
 
   -Domain Used: tunnel.local (custom pseudo-domain)
+  
   -Listener Port: 53 (standard DNS)
+
   -Behavior: Replies to DNS queries with the attacker's IP instead of resolving them, enabling the victim to unknowingly connect to the dnscat2 server.
 - `/malware`: Contains the Ruby-based malware script
 - `/dnscat2`: Config files and notes on the client/server interaction
