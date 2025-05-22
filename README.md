@@ -19,6 +19,10 @@ This project simulates a DNS Tunneling attack using:
 - `/dnschef`: Configuration for fake DNS domain
 ### The attacker machine (Kali Linux) uses dnschef, a rogue DNS proxy, to intercept DNS queries from the victim.
   -Purpose: Redirect DNS queries for a fake domain to the attacker's IP, enabling covert C2 communication.
+
+  ```bash
+    sudo apt install dnschef -y
+```
   
    ![image](https://github.com/user-attachments/assets/0b114df3-97b7-4f8c-bc33-74e2ead71348)
    
