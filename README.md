@@ -24,10 +24,9 @@ This project simulates a DNS Tunneling attack using:
     sudo apt install dnschef -y
 ```
   
-   ![image](https://github.com/user-attachments/assets/0b114df3-97b7-4f8c-bc33-74e2ead71348)
-   
-   ![image](https://github.com/user-attachments/assets/ad52b1bb-ce61-487c-9985-94572dbec7a6)
-  
+```bash
+   sudo dnschef --fakeip 192.168.163.143 -q
+```     
   -Listener Port: 53 (standard DNS)
 
   -Behavior: Replies to DNS queries with the attacker's IP instead of resolving them, enabling the victim to unknowingly connect to the dnscat2 server.
@@ -36,30 +35,37 @@ This project simulates a DNS Tunneling attack using:
   To complete the DNS tunneling setup, the attacker's environment includes running both the **dnscat2 C2 server** and the **dnschef fake DNS server** in parallel.
  ### ⚙️ dnscat2 Installation & Setup
  -Installs Ruby
- 
-   ![image](https://github.com/user-attachments/assets/412d31fa-7da7-4a84-b466-45ad59f421d7)
-    
+ ```bash
+   sudo apt install ruby git -y
+```    
  -Clones the dnscat2 repository from GitHub to your local machine.
     
-   ![image](https://github.com/user-attachments/assets/45db2ad5-10ac-4d9e-92b7-5f52021338b4)
-    
+``` bash
+  git clone https://github.com/iagox86/dnscat2.git
+```    
  -Change directory to the dnscat2 server folder and Installs Ruby's dependency manager Bundler
     
-   ![image](https://github.com/user-attachments/assets/68e13608-4294-4269-ad63-0db40c084a6d)
-    
+```bash
+ cd dnscat2/server
+ sudo gem install bundler
+```    
  -installs any required Ruby gems defined in the Gemfile
-    
+    ```bash
+    sudo bundle install 
+    ```
    ![image](https://github.com/user-attachments/assets/3434ca66-218e-414c-b7f3-24b3a0abca4e)
     
  -Launches the dnscat2 server, enabling it to listen for DNS queries and manage inbound communication.
-  
+  ```bash
+    ruby ./dnscat2.rb
+ ```
    ![image](https://github.com/user-attachments/assets/b6bb6cac-e639-4358-b740-28270d4a04f6)
     
    (‼️ Important: Both the dnscat2 server and dnschef must run simultaneously)
    
 - `/malware`: 🐛 Malware Creation and Deployment
 A custom Bash script (`malware.sh`) was developed to simulate real-world malware behavior using DNS tunneling for covert Command and Control (C2) communication.
-  
+
    ![image](https://github.com/user-attachments/assets/bb7d4a97-c78d-40bf-bebf-fd17233af4a3)
 
  ### 🔒 Stealthy Deployment
